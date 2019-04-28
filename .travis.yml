@@ -6,4 +6,4 @@ before_install:
   - docker build -t jawade/docker-udemy-react -f Dockerfile.dev .
 
 script:
-  - docker run jawade/docker-udemy-react npm run test -- --coverage
+  - docker run -e CI=true jawade/docker-udemy-react npm run test -- --watchAll=false
